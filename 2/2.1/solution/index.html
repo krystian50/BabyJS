@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Star Wars</title>
+    <style>
+      dt {
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+      dd {
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This is a Star Wars character:</h1>
+    
+    <dl>
+      <dt>Name</dt>
+      <dd><span id="name"></span></dd>
+      <dt>Gender</dt>
+      <dd><span id="gender"></dd>
+      <dt>Birth Year</dt>
+      <dd><span id="birth_year"></span></dd>
+    </dl>
+
+    <script>
+      const httpService = {
+        get: (url) => fetch(`https://swapi.dev/api${url}`).then((response) => {
+          if (response.status === 200) {
+            return response.json();
+          }
+
+          throw new Error(response.statusText);
+        })
+      };
+
+      httpService.get('/people/?search=r2').then(({ results }) => {
+        const person = results[0]
+        const { name, gender, birth_year } = person
+
+        document.querySelector('#name').textContent = name
+        document.querySelector('#gender').textContent = gender
+        document.querySelector('#birth_year').textContent = birth_year
+      })
+    </script>
+  </body>
+</html>
