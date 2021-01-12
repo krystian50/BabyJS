@@ -1,13 +1,6 @@
 const baseUrl = 'https://swapi.dev/api';
 const peoplePath = '/people';
 
-const searchHandler = (ev) => {
-  ev.preventDefault();
-  const searchValue = document.querySelector('#searchInput').value;
-
-  search(searchValue);
-};
-
 const HttpClient = {
   get: (url) => fetch(`${baseUrl}${url}`).then((resp) => resp.json()),
 };
@@ -29,3 +22,11 @@ const search = (searchValue) => {
     updateTextNode('#birthYear', birth_year);
   });
 };
+
+const StarWarsApp = {
+  methods: {
+    searchHandler,
+  },
+};
+
+Vue.createApp(StarWarsApp).mount('#app');

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h1>Star Wars Api</h1>
+
+    <form @submit.prevent="onSubmit()">
+      <input v-model="searchValue" type="text">
+      <button type="submit">Search</button>
+    </form>
+
+    <h4>Name:</h4>
+    <p>{{ character.name }}</p>
+
+    <h4>Gender:</h4>
+    <p>{{ character.gender }}</p>
+
+    <h4>Birth year:</h4>
+    <p>{{ character.birthYear }}</p>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="index.js"></script>
+</body>
+</html>
