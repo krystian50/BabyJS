@@ -1,28 +1,27 @@
-<html>
-  <head>
-    <title>Star Wars</title>
-    <style>
-      dt {
-        font-weight: 600;
-        font-size: 18px;
-      }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Star Wars Api</h1>
 
-      dd {
-        margin-top: 5px;
-      }
-    </style>
+    <form onsubmit="searchHandler(event)">
+        <input id="searchInput" type="text">
+        <button id="searchButton" type="submit">Search</button>
+    </form>
+
+    <h4>Name:</h4>
+    <p id="name"></p>
+
+    <h4>Gender:</h4>
+    <p id="gender"></p>
+
+    <h4>Birth year:</h4>
+    <p id="birthYear"></p>
+
     <script src="index.js"></script>
-  </head>
-  <body>
-    <h1>This is a Star Wars character:</h1>
-    
-    <dl>
-      <dt>Name</dt>
-      <dd><span id="name"></span></dd>
-      <dt>Gender</dt>
-      <dd><span id="gender"></dd>
-      <dt>Birth Year</dt>
-      <dd><span id="birth_year"></span></dd>
-    </dl>
-  </body>
+</body>
 </html>
